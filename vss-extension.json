@@ -1,0 +1,52 @@
+{
+  "manifestVersion": 1,
+  "id": "ecs-task",
+  "name": "Ecs Task",
+  "publisher": "pavantikkani",
+  "version": "6.0.0",
+  "public": false,
+  "description": "A Simple Task to deploy ecs services",
+  "categories": [
+    "Azure Pipelines",
+    "Azure Repos"
+  ],
+  "Tags": [
+    "Azure DevOps",
+    "Azure Pipelines",
+    "Release",
+    "Build"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.release",
+    "vso.release_manage"
+  ],
+  "icons": {
+    "default": "images/gitlab128.png",
+    "large": "images/gitlab512.png"
+  },
+  "branding": {
+    "color": "#3B3E43",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "task"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "build-task",
+      "description": "Task with a dynamic property getting data from an endpoint REST data source",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [ "ms.vss-distributed-task.tasks" ],
+      "properties": {
+        "name": "task"
+      }
+    }
+  ]
+}
