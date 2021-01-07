@@ -19,6 +19,7 @@ async function listS3Buckets(){
             let auth = tl.getEndpointAuthorization(service, false)
             AWS.config.accessKeyId = auth?.parameters["username"]
             AWS.config.secretAccessKey = auth?.parameters["password"]
+            console.log("Hello World")
 
             // Printing release variables from tfs
             // const vars = await getVariables()
