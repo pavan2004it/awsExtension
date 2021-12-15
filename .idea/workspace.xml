@@ -4,68 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.taskkey" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.1.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.2.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.0.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.7.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.1.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.2.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.3.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.4.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.5.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.6.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.7.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.8.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.1.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.2.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.3.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.4.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.0.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.1.0.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-11.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-11.1.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-12.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-13.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.1.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.2.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-15.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-16.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-17.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-18.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-19.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-20.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-21.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-22.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-24.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-25.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-26.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-2.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-2.1.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.1.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.5.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.6.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.7.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-4.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-4.1.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-5.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-6.0.0.vsix" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/.taskkey" beforeDir="false" afterPath="$PROJECT_DIR$/task/.taskkey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/task/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/package-lock.json" afterDir="false" />
+    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="updated ecs task">
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.2.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.7.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.1.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.2.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.3.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.4.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.5.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.6.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.7.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.8.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.1.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.2.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.3.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.4.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-1.0.0.vsix" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/task/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/task.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/task.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vss-extension.json" beforeDir="false" afterPath="$PROJECT_DIR$/vss-extension.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,8 +144,16 @@
       <workItem from="1639549052189" duration="364000" />
       <workItem from="1639550007537" duration="91000" />
       <workItem from="1639550112358" duration="20000" />
-      <workItem from="1639586193466" duration="2928000" />
+      <workItem from="1639586193466" duration="3336000" />
     </task>
+    <task id="LOCAL-00001" summary="updated ecs task">
+      <created>1639590102923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639590102923</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +180,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="updated ecs task" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated ecs task" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
