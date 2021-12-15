@@ -1,7 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="" />
+    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.taskkey" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.1.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-6.2.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.0.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.7.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.1.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.2.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.3.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.4.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.5.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.6.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.7.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-7.8.8.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.1.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.2.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.3.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-8.0.4.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.0.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-9.1.0.vsix" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-11.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-11.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-12.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-13.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-14.2.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-15.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-16.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-17.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-18.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-19.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-20.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-21.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-22.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-24.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-25.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.cookbook-mismatch-26.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-2.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-2.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.5.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.6.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-3.7.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-4.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-4.1.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-5.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pavantikkani.ecs-task-6.0.0.vsix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/.taskkey" beforeDir="false" afterPath="$PROJECT_DIR$/task/.taskkey" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/task/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/task.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/task.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vss-extension.json" beforeDir="false" afterPath="$PROJECT_DIR$/vss-extension.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +79,26 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1hAX39YlO6KwsVdS5kq5Z94wpQB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -29,14 +106,34 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
-    <property name="ts.external.directory.path" value="C:\Users\pavan.tikkani\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6948.73\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="C:\Users\pavan.tikkani\Documents\mismatch\task" />
     </key>
+  </component>
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration name="index.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/task/index.js" working-dir="$PROJECT_DIR$/task">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="$FileDirRelativeToProjectRoot$" path-to-js-file="task/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2">
+        <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="$USER_HOME$/Documents/Repos/awsExtension/task/tsconfig.json" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.index.js" />
+      <item itemvalue="Node.js.index.js (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,6 +164,26 @@
       <workItem from="1602655694118" duration="1215000" />
       <workItem from="1602756212609" duration="97000" />
       <workItem from="1603170481747" duration="28000" />
+      <workItem from="1607837427450" duration="95000" />
+      <workItem from="1607877254663" duration="831000" />
+      <workItem from="1608311468933" duration="4539000" />
+      <workItem from="1608348219003" duration="3939000" />
+      <workItem from="1608379579874" duration="806000" />
+      <workItem from="1608439188200" duration="5096000" />
+      <workItem from="1614915447048" duration="55000" />
+      <workItem from="1638511139067" duration="1040000" />
+      <workItem from="1638854967761" duration="1494000" />
+      <workItem from="1638856488190" duration="284000" />
+      <workItem from="1638859484827" duration="4077000" />
+      <workItem from="1638863817617" duration="927000" />
+      <workItem from="1639030618546" duration="6390000" />
+      <workItem from="1639370000836" duration="5727000" />
+      <workItem from="1639456207415" duration="11614000" />
+      <workItem from="1639476000214" duration="1873000" />
+      <workItem from="1639549052189" duration="364000" />
+      <workItem from="1639550007537" duration="91000" />
+      <workItem from="1639550112358" duration="20000" />
+      <workItem from="1639586193466" duration="2928000" />
     </task>
     <servers />
   </component>
@@ -78,22 +195,25 @@
       </list>
     </option>
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1599485226357">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599485226357" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1599485226357">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599485226357" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1599485226357">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599485226357" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1599485226357">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599485226357" />
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -27,108 +27,70 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv = __importStar(require("dotenv"));
-dotenv.config();
 const tl = __importStar(require("azure-pipelines-task-lib"));
-const aws_sdk_1 = __importStar(require("aws-sdk"));
-const axios_1 = __importDefault(require("axios"));
-function listS3Buckets() {
+const aws_sdk_1 = require("aws-sdk");
+function create_task() {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            let service = tl.getInput('service', true);
-            let token = tl.getInput('pat token', true);
-            const encoded = token;
-            if (service) {
-                aws_sdk_1.default.config = new aws_sdk_1.default.Config();
-                let auth = tl.getEndpointAuthorization(service, false);
-                aws_sdk_1.default.config.accessKeyId = auth === null || auth === void 0 ? void 0 : auth.parameters["username"];
-                aws_sdk_1.default.config.secretAccessKey = auth === null || auth === void 0 ? void 0 : auth.parameters["password"];
-                // Printing release variables from tfs
-                // const vars = await getVariables()
-                // console.log(vars)
-                let s3 = new aws_sdk_1.S3();
-                const res = yield s3.listBuckets().promise();
-                getVariables(encoded);
-                // console.log(tl.getVariables())
-                // Printing all s3 buckets
-                // res.Buckets?.forEach((bucket) =>{
-                //     console.log(bucket.Name)
-                // })
-            }
-        }
-        catch (err) {
-            console.log("Error Occurred", err);
-        }
-    });
-}
-function getVariables(encoded) {
-    return __awaiter(this, void 0, void 0, function* () {
-        // const config: AxiosRequestConfig = {
-        //     method: 'get',
-        //     url: 'https://vsrm.dev.azure.com/tfsbioclinica/Clinfeed/_apis/release/definitions/2?api-version=6.1-preview.4&Authorization=Basic BASE64PATSTRING',
-        //     headers: {
-        //         'Authorization': 'Basic Ono0aXgzcGVlc21lZWd2YTV4cm1rM29hNXBubnJkbmVlNHp6YWU2YmduZWJuNG9kaXMzZmE='}
-        // };
-        //
-        // return axios(config)
-        //     .then(function (response) {
-        //         const {variables} = response.data;
-        //         for(let key in variables){
-        //             console.log(`${key}: ${variables[key].value}`)
-        //         }
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
-        const ptoken = Buffer.from(`PAT:${encoded}`).toString('base64');
-        const relConfig = {
-            method: 'get',
-            url: 'https://eclinicaltfs.bioclinica.com/CrossProduct/Integration/_apis/release/releases/2564?api-version=5.1&Authorization=Basic BASE64PATSTRING',
-            headers: {
-                'Authorization': `Basic ${ptoken}`
+        let ecs = new aws_sdk_1.ECS();
+        const container_family = tl.getInput('container_family', true);
+        const container_name = tl.getInput('container_name', true);
+        const container_image = tl.getInput('container_image', true);
+        const memory_reservation = tl.getInput('memory_reservation', true);
+        const container_port = tl.getInput('container_port', true);
+        const host_port = tl.getInput('host_port', true);
+        const protocol = tl.getInput('protocol', true);
+        const pseudo = tl.getBoolInput('pseudo', true);
+        const cluster_name = tl.getInput('cluster_name', true);
+        const service = tl.getInput('service', true);
+        const desired_count = tl.getInput('desired_count', true);
+        const maximum_percent = tl.getInput('maximum_percent', true);
+        const minimum_healthy = tl.getInput('minimum_healthy', true);
+        const delay = tl.getInput('delay', true);
+        const max_tries = tl.getInput('max_tries', true);
+        const s3_arn = tl.getInput('s3_arn', true);
+        const secret_arn = tl.getInput('secret_arn', false);
+        let task_params = {
+            family: container_family,
+            networkMode: "bridge",
+            containerDefinitions: [{
+                    name: container_name,
+                    image: container_image,
+                    memoryReservation: Number(memory_reservation),
+                    portMappings: [{
+                            containerPort: Number(container_port),
+                            hostPort: Number(host_port),
+                            protocol: protocol
+                        }],
+                    essential: true,
+                    environmentFiles: [{ type: "s3", value: s3_arn }],
+                    pseudoTerminal: pseudo,
+                    secrets: [{ name: "database-pwd", valueFrom: secret_arn }]
+                }
+            ],
+        };
+        console.log(task_params);
+        let task_res = yield ecs.registerTaskDefinition(task_params).promise();
+        let service_params = {
+            cluster: cluster_name,
+            service: service,
+            desiredCount: Number(desired_count),
+            taskDefinition: (_a = task_res.taskDefinition) === null || _a === void 0 ? void 0 : _a.taskDefinitionArn,
+            deploymentConfiguration: {
+                maximumPercent: Number(maximum_percent),
+                minimumHealthyPercent: Number(minimum_healthy)
             }
         };
-        axios_1.default(relConfig).then(function (response) {
-            console.log(response.data);
-        }).catch(err => {
-            console.log(err);
-        });
-        const config = {
-            method: 'get',
-            url: 'https://vsrm.dev.azure.com/tfsbioclinica/Clinfeed/_apis/release/definitions/2?api-version=6.1-preview.4&Authorization=Basic BASE64PATSTRING',
-            headers: {
-                'Authorization': `Basic ${ptoken}`
-            }
+        let update_service = yield ecs.updateService(service_params).promise();
+        console.log(update_service.$response);
+        let wait_params = {
+            cluster: cluster_name,
+            services: [service],
+            delay: Number(delay),
+            maxAttempts: Number(max_tries)
         };
-        axios_1.default(config)
-            .then(function (response) {
-            const { variables, environments, name } = response.data;
-            let rel_vars = {};
-            let env_vars = {};
-            for (let key in variables) {
-                if (variables.hasOwnProperty(key)) {
-                    rel_vars[key] = variables[key].value;
-                }
-            }
-            console.log(rel_vars);
-            environments.forEach((env) => {
-                const { variables, name } = env;
-                for (let key in variables) {
-                    if (variables.hasOwnProperty(key)) {
-                        env_vars[key] = variables[key].value;
-                    }
-                }
-                console.log(name);
-                console.log(env_vars);
-            });
-        })
-            .catch(function (error) {
-            console.log(error);
-        });
+        ecs.waitFor('servicesStable', wait_params);
     });
 }
-listS3Buckets().catch(err => console.error(err));
+create_task().catch(err => console.error(err));
