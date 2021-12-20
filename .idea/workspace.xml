@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="Removed vsix files and axios from package.json">
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.1.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.10.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.2.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.3.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.5.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.6.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.7.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.8.vsix" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PavanNubewired.ecs-task-10.0.9.vsix" afterDir="false" />
+    <list default="true" id="4d823b38-0778-4fa7-bb4f-792b569f3db8" name="Default Changelist" comment="Removed .vsix files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/task/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/task.json" beforeDir="false" afterPath="$PROJECT_DIR$/task/task.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vss-extension.json" beforeDir="false" afterPath="$PROJECT_DIR$/vss-extension.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/task/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +129,7 @@
       <workItem from="1639971207826" duration="300000" />
       <workItem from="1639979130830" duration="786000" />
       <workItem from="1639980318278" duration="2000" />
-      <workItem from="1639981767610" duration="8768000" />
+      <workItem from="1639981767610" duration="9133000" />
     </task>
     <task id="LOCAL-00001" summary="updated ecs task">
       <created>1639590102923</created>
@@ -157,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639590497635</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Secrets Multiline input for multiple secrets">
+      <created>1640001094534</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640001094534</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Removed .vsix files">
+      <created>1640001218815</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640001218815</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +188,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="updated ecs task" />
     <MESSAGE value="Removed vsix files and axios from package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed vsix files and axios from package.json" />
+    <MESSAGE value="Added Secrets Multiline input for multiple secrets" />
+    <MESSAGE value="Removed .vsix files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed .vsix files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
