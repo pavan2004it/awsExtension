@@ -29,11 +29,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const tl = __importStar(require("azure-pipelines-task-lib"));
-const aws_sdk_1 = require("aws-sdk");
+const aws_sdk_1 = __importStar(require("aws-sdk"));
 function create_task() {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        let ecs = new aws_sdk_1.ECS();
+        let service = tl.getInput('service', true);
+        let auth = tl.getEndpointAuthorization(service, false);
+        aws_sdk_1.default.config.accessKeyId = auth === null || auth === void 0 ? void 0 : auth.parameters["username"];
+        aws_sdk_1.default.config.secretAccessKey = auth === null || auth === void 0 ? void 0 : auth.parameters["password"];
+        let ecs = new aws_sdk_1.ECS({ region: "us-east-1" });
         const container_family = tl.getInput('container_family', true);
         const container_name = tl.getInput('container_name', true);
         const container_image = tl.getInput('container_image', true);
@@ -43,14 +47,19 @@ function create_task() {
         const protocol = tl.getInput('protocol', true);
         const pseudo = tl.getBoolInput('pseudo', true);
         const cluster_name = tl.getInput('cluster_name', true);
-        const service = tl.getInput('service', true);
+        const service_name = tl.getInput('service_name', true);
         const desired_count = tl.getInput('desired_count', true);
         const maximum_percent = tl.getInput('maximum_percent', true);
         const minimum_healthy = tl.getInput('minimum_healthy', true);
         const delay = tl.getInput('delay', true);
         const max_tries = tl.getInput('max_tries', true);
         const s3_arn = tl.getInput('s3_arn', true);
-        const secret_arn = tl.getInput('secret_arn', false);
+        const Secrets = tl.getInput('Secrets', false);
+        let mySecArr = Secrets.split("\n");
+        let sec_arr = [];
+        mySecArr.forEach(item => {
+            sec_arr.push(JSON.parse(item));
+        });
         let task_params = {
             family: container_family,
             networkMode: "bridge",
@@ -66,15 +75,14 @@ function create_task() {
                     essential: true,
                     environmentFiles: [{ type: "s3", value: s3_arn }],
                     pseudoTerminal: pseudo,
-                    secrets: [{ name: "database-pwd", valueFrom: secret_arn }]
+                    secrets: sec_arr
                 }
             ],
         };
-        console.log(task_params);
         let task_res = yield ecs.registerTaskDefinition(task_params).promise();
         let service_params = {
             cluster: cluster_name,
-            service: service,
+            service: service_name,
             desiredCount: Number(desired_count),
             taskDefinition: (_a = task_res.taskDefinition) === null || _a === void 0 ? void 0 : _a.taskDefinitionArn,
             deploymentConfiguration: {

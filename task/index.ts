@@ -1,8 +1,10 @@
+// noinspection JSMismatchedCollectionQueryUpdate
+
 import * as tl from "azure-pipelines-task-lib";
 import AWS, {ECS} from 'aws-sdk';
 import {
     DescribeServicesRequest,
-    RegisterTaskDefinitionRequest, UpdateServiceRequest
+    RegisterTaskDefinitionRequest, Secret, UpdateServiceRequest
 } from "aws-sdk/clients/ecs";
 import {WaiterConfiguration} from "aws-sdk/lib/service";
 import {delay} from "q";
@@ -11,10 +13,11 @@ import {delay} from "q";
 async function create_task() {
     let service: string | undefined = tl.getInput('service',true)
     let auth = tl.getEndpointAuthorization(service!, false)
+
     AWS.config.accessKeyId = auth?.parameters["username"]
     AWS.config.secretAccessKey = auth?.parameters["password"]
 
-    let ecs = new ECS()
+    let ecs = new ECS({region:"us-east-1"})
     const container_family: string | undefined = tl.getInput('container_family', true);
     const container_name: string | undefined = tl.getInput('container_name', true);
     const container_image: string | undefined = tl.getInput('container_image', true);
@@ -31,8 +34,15 @@ async function create_task() {
     const delay: string | undefined = tl.getInput('delay', true);
     const max_tries: string | undefined = tl.getInput('max_tries', true);
     const s3_arn: string | undefined = tl.getInput('s3_arn',true)
-    const secret_arn: string | undefined = tl.getInput('secret_arn',false)
+    const Secrets: string | undefined = tl.getInput('Secrets',false)
 
+
+
+    let mySecArr: string[] = Secrets!.split("\n")
+    let sec_arr: Secret[] = []
+    mySecArr.forEach(item=>{
+        sec_arr.push(JSON.parse(item))
+    })
 
     let task_params: RegisterTaskDefinitionRequest = {
         family: container_family!,
@@ -49,11 +59,10 @@ async function create_task() {
             essential: true,
             environmentFiles: [{type:"s3",value:s3_arn!}],
             pseudoTerminal: pseudo!,
-            secrets:[{name:"database-pwd",valueFrom:secret_arn!}]
+            secrets:sec_arr!
         }
         ],
     }
-    console.log(task_params)
 
 
     let task_res = await ecs.registerTaskDefinition(task_params).promise()

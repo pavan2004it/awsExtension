@@ -13,7 +13,7 @@
   "version": {
     "Major": 10,
     "Minor": 0,
-    "Patch": 0
+    "Patch": 11
   },
   "instanceNameFormat": "Aws Connection",
   "inputs": [
@@ -129,13 +129,14 @@
       "defaultValue": "",
       "required": true,
       "helpMarkDown": "S3_ARN"},
-    {"name": "secret_arn",
-      "type": "int",
-      "label": "SECRET_ARN",
+    {
+      "name": "Secrets",
+      "type": "multiLine",
+      "label": "AWS Task Definition Secret",
       "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "SECRET_ARN"}
-
+      "required": false,
+      "helpMarkDown": "Multiline input for secrets you must use provide the secret in the format {'name':string,'valueFrom':string} use double quotes and the next value must be in new line"
+    }
   ],
   "execution": {
     "Node": {
