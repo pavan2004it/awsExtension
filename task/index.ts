@@ -1,5 +1,5 @@
 // noinspection JSMismatchedCollectionQueryUpdate
-
+// Imports
 import * as tl from "azure-pipelines-task-lib";
 import AWS, {ECS} from 'aws-sdk';
 import {
@@ -7,9 +7,8 @@ import {
     RegisterTaskDefinitionRequest, Secret, UpdateServiceRequest
 } from "aws-sdk/clients/ecs";
 import {WaiterConfiguration} from "aws-sdk/lib/service";
-import {delay} from "q";
 
-
+// Code
 async function create_task() {
     let service: string | undefined = tl.getInput('service',true)
     let auth = tl.getEndpointAuthorization(service!, false)
