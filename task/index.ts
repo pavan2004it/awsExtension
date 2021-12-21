@@ -8,10 +8,7 @@ import {
     DescribeServicesRequest,
     UpdateServiceCommand, RegisterTaskDefinitionRequest, Secret, waitUntilServicesInactive, DescribeServicesCommandInput
 } from "@aws-sdk/client-ecs";
-import {ConfigServiceClient} from "@aws-sdk/client-config-service";
 import {Credentials,WaiterConfiguration} from "@aws-sdk/types"
-import {delay} from "q";
-import {ConfigServiceClientConfig} from "@aws-sdk/client-config-service/dist-types/ConfigServiceClient";
 
 
 async function create_task() {
@@ -22,18 +19,9 @@ async function create_task() {
         accessKeyId: auth?.parameters["username"]!,
         secretAccessKey: auth?.parameters["password"]!
     }
-    let configuration: ConfigServiceClientConfig = {
-        credentials: aws_credentials
-    }
-
-    let AWS = new ConfigServiceClient(configuration)
-
-    // AWS.config.accessKeyId = auth?.parameters["username"]
-    // AWS.config.secretAccessKey = auth?.parameters["password"]
 
 
-
-    let ecs = new ECSClient({region:"us-east-1"})
+    let ecs = new ECSClient({region:"us-east-1",credentials:aws_credentials!})
     const container_family: string | undefined = tl.getInput('container_family', true);
     const container_name: string | undefined = tl.getInput('container_name', true);
     const container_image: string | undefined = tl.getInput('container_image', true);
@@ -47,7 +35,7 @@ async function create_task() {
     const desired_count: string | undefined = tl.getInput('desired_count', true);
     const maximum_percent: string | undefined = tl.getInput('maximum_percent', true);
     const minimum_healthy: string | undefined = tl.getInput('minimum_healthy', true);
-    const delay: string | undefined = tl.getInput('delay', true);
+    const max_wait_time: string | undefined = tl.getInput('max_wait_time', true);
     const max_tries: string | undefined = tl.getInput('max_tries', true);
     const s3_arn: string | undefined = tl.getInput('s3_arn',true)
     const Secrets: string | undefined = tl.getInput('Secrets',false)
@@ -105,7 +93,7 @@ async function create_task() {
 
     let wait_params: WaiterConfiguration<ECSClient> = {
         client: ecs!,
-        maxWaitTime: Number(delay),
+        maxWaitTime: Number(max_wait_time),
 
     }
 
