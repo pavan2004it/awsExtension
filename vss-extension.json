@@ -2,8 +2,8 @@
   "manifestVersion": 1,
   "id": "ecs-task",
   "name": "Ecs Task",
-  "publisher": "PavanNubewired",
-  "version": "10.0.11",
+  "publisher": "Nubewired",
+  "version": "10.0.12",
   "public": false,
   "description": "A Simple Task to deploy ecs services",
   "categories": [
