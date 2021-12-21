@@ -6,7 +6,7 @@ import {
     RegisterTaskDefinitionCommand,
     UpdateServiceRequest,
     DescribeServicesRequest,
-    UpdateServiceCommand, RegisterTaskDefinitionRequest, Secret, waitUntilServicesInactive, DescribeServicesCommandInput
+    UpdateServiceCommand, RegisterTaskDefinitionRequest, Secret, waitUntilServicesInactive
 } from "@aws-sdk/client-ecs";
 import {Credentials,WaiterConfiguration} from "@aws-sdk/types"
 
