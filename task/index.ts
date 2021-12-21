@@ -1,23 +1,39 @@
 // noinspection JSMismatchedCollectionQueryUpdate
 
 import * as tl from "azure-pipelines-task-lib";
-import AWS, {ECS} from 'aws-sdk';
 import {
+    ECSClient,
+    RegisterTaskDefinitionCommand,
+    UpdateServiceRequest,
     DescribeServicesRequest,
-    RegisterTaskDefinitionRequest, Secret, UpdateServiceRequest
-} from "aws-sdk/clients/ecs";
-import {WaiterConfiguration} from "aws-sdk/lib/service";
+    UpdateServiceCommand, RegisterTaskDefinitionRequest, Secret, waitUntilServicesInactive, DescribeServicesCommandInput
+} from "@aws-sdk/client-ecs";
+import {ConfigServiceClient} from "@aws-sdk/client-config-service";
+import {Credentials,WaiterConfiguration} from "@aws-sdk/types"
 import {delay} from "q";
+import {ConfigServiceClientConfig} from "@aws-sdk/client-config-service/dist-types/ConfigServiceClient";
 
 
 async function create_task() {
     let service: string | undefined = tl.getInput('service',true)
     let auth = tl.getEndpointAuthorization(service!, false)
 
-    AWS.config.accessKeyId = auth?.parameters["username"]
-    AWS.config.secretAccessKey = auth?.parameters["password"]
+    let aws_credentials: Credentials = {
+        accessKeyId: auth?.parameters["username"]!,
+        secretAccessKey: auth?.parameters["password"]!
+    }
+    let configuration: ConfigServiceClientConfig = {
+        credentials: aws_credentials
+    }
 
-    let ecs = new ECS({region:"us-east-1"})
+    let AWS = new ConfigServiceClient(configuration)
+
+    // AWS.config.accessKeyId = auth?.parameters["username"]
+    // AWS.config.secretAccessKey = auth?.parameters["password"]
+
+
+
+    let ecs = new ECSClient({region:"us-east-1"})
     const container_family: string | undefined = tl.getInput('container_family', true);
     const container_name: string | undefined = tl.getInput('container_name', true);
     const container_image: string | undefined = tl.getInput('container_image', true);
@@ -64,8 +80,8 @@ async function create_task() {
         ],
     }
 
-
-    let task_res = await ecs.registerTaskDefinition(task_params).promise()
+    let ecsCommand = new RegisterTaskDefinitionCommand(task_params)
+    let task_res = await ecs.send(ecsCommand)
 
 
     let service_params: UpdateServiceRequest = {
@@ -79,18 +95,27 @@ async function create_task() {
         }
     }
 
-    let update_service = await ecs.updateService(service_params).promise()
+    let updateServiceCommand = new UpdateServiceCommand(service_params)
 
-    console.log(update_service.$response)
+    let update_service = await ecs.send(updateServiceCommand)
 
-    let wait_params: DescribeServicesRequest & WaiterConfiguration = {
-        cluster: cluster_name!,
-        services: [service!],
-        delay: Number(delay),
-        maxAttempts: Number(max_tries)
+    console.log(update_service.$metadata)
+
+
+
+    let wait_params: WaiterConfiguration<ECSClient> = {
+        client: ecs!,
+        maxWaitTime: Number(delay),
+
     }
 
-    ecs.waitFor('servicesStable', wait_params)
+    let ecs_service_params: DescribeServicesRequest = {
+        cluster: cluster_name!,
+        services: [service!]
+    }
+
+    await waitUntilServicesInactive(wait_params,ecs_service_params)
+
 
 }
 
