@@ -13,14 +13,14 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 0
+    "Patch": 1
   },
   "instanceNameFormat": "Aws Connection",
   "inputs": [
     {
       "name": "service",
       "type": "connectedService:AWS",
-      "label": "Aws Connection",
+      "label": "Aws Connection v3",
       "defaultValue": "",
       "required": true,
       "helpMarkDown": "Select the aws endpoint and pull credentials from the endpoint"
