@@ -2,13 +2,17 @@
 
 import * as tl from "azure-pipelines-task-lib";
 import {
-    ECSClient,
-    RegisterTaskDefinitionCommand,
-    UpdateServiceRequest,
     DescribeServicesRequest,
-    UpdateServiceCommand, RegisterTaskDefinitionRequest, Secret, waitUntilServicesInactive
+    ECSClient,
+    LogDriver,
+    RegisterTaskDefinitionCommand,
+    RegisterTaskDefinitionRequest,
+    Secret,
+    UpdateServiceCommand,
+    UpdateServiceRequest,
+    waitUntilServicesInactive
 } from "@aws-sdk/client-ecs";
-import {Credentials,WaiterConfiguration} from "@aws-sdk/types"
+import {Credentials, WaiterConfiguration} from "@aws-sdk/types"
 
 
 async function create_task() {
@@ -39,6 +43,9 @@ async function create_task() {
     const max_tries: string | undefined = tl.getInput('max_tries', true);
     const s3_arn: string | undefined = tl.getInput('s3_arn',true)
     const Secrets: string | undefined = tl.getInput('Secrets',false)
+    const log_group: string | undefined = tl.getInput('log_group',false)
+    const log_region: string | undefined = tl.getInput('log_region',false)
+    const stream_prefix: string | undefined = tl.getInput('stream_prefix',false)
 
 
 
@@ -63,7 +70,15 @@ async function create_task() {
             essential: true,
             environmentFiles: [{type:"s3",value:s3_arn!}],
             pseudoTerminal: pseudo!,
-            secrets:sec_arr!
+            secrets:sec_arr!,
+            logConfiguration: {
+                logDriver: LogDriver.AWSLOGS,
+                options:{
+                    'awslogs-group': log_group!,
+                    'awslogs-region': log_region!,
+                    'awslogs-stream-prefix':stream_prefix!
+                }
+            }
         }
         ],
     }
