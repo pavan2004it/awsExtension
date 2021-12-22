@@ -136,7 +136,25 @@
       "defaultValue": "",
       "required": false,
       "helpMarkDown": "Multiline input for secrets you must use provide the secret in the format {'name':string,'valueFrom':string} use double quotes and the next value must be in new line"
-    }
+    },
+    {"name": "log_region",
+      "type": "string",
+      "label": "Log_Region",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Log region for service logs in cloudwatch"},
+    {"name": "log_group",
+      "type": "string",
+      "label": "Log_Group",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Name of the log group"},
+    {"name": "stream_prefix",
+      "type": "string",
+      "label": "Stream_Prefix",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Log stream prefix for the log groups"}
   ],
   "execution": {
     "Node": {
