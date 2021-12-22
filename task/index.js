@@ -1,4 +1,5 @@
 "use strict";
+// noinspection JSMismatchedCollectionQueryUpdate
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -29,15 +30,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const tl = __importStar(require("azure-pipelines-task-lib"));
-const aws_sdk_1 = __importStar(require("aws-sdk"));
+const client_ecs_1 = require("@aws-sdk/client-ecs");
 function create_task() {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         let service = tl.getInput('service', true);
         let auth = tl.getEndpointAuthorization(service, false);
-        aws_sdk_1.default.config.accessKeyId = auth === null || auth === void 0 ? void 0 : auth.parameters["username"];
-        aws_sdk_1.default.config.secretAccessKey = auth === null || auth === void 0 ? void 0 : auth.parameters["password"];
-        let ecs = new aws_sdk_1.ECS({ region: "us-east-1" });
+        let aws_credentials = {
+            accessKeyId: auth === null || auth === void 0 ? void 0 : auth.parameters["username"],
+            secretAccessKey: auth === null || auth === void 0 ? void 0 : auth.parameters["password"]
+        };
+        let ecs = new client_ecs_1.ECSClient({ region: "us-east-1", credentials: aws_credentials });
         const container_family = tl.getInput('container_family', true);
         const container_name = tl.getInput('container_name', true);
         const container_image = tl.getInput('container_image', true);
@@ -51,10 +54,14 @@ function create_task() {
         const desired_count = tl.getInput('desired_count', true);
         const maximum_percent = tl.getInput('maximum_percent', true);
         const minimum_healthy = tl.getInput('minimum_healthy', true);
-        const delay = tl.getInput('delay', true);
+        const max_wait_time = tl.getInput('max_wait_time', true);
         const max_tries = tl.getInput('max_tries', true);
         const s3_arn = tl.getInput('s3_arn', true);
         const Secrets = tl.getInput('Secrets', false);
+        const log_group = tl.getInput('log_group', false);
+        const log_region = tl.getInput('log_region', false);
+        const stream_prefix = tl.getInput('stream_prefix', false);
+        const execution_role = tl.getInput('execution_role', false);
         let mySecArr = Secrets.split("\n");
         let sec_arr = [];
         mySecArr.forEach(item => {
@@ -75,11 +82,21 @@ function create_task() {
                     essential: true,
                     environmentFiles: [{ type: "s3", value: s3_arn }],
                     pseudoTerminal: pseudo,
-                    secrets: sec_arr
+                    secrets: sec_arr,
+                    logConfiguration: {
+                        logDriver: client_ecs_1.LogDriver.AWSLOGS,
+                        options: {
+                            'awslogs-group': log_group,
+                            'awslogs-region': log_region,
+                            'awslogs-stream-prefix': stream_prefix
+                        }
+                    }
                 }
             ],
+            executionRoleArn: execution_role
         };
-        let task_res = yield ecs.registerTaskDefinition(task_params).promise();
+        let ecsCommand = new client_ecs_1.RegisterTaskDefinitionCommand(task_params);
+        let task_res = yield ecs.send(ecsCommand);
         let service_params = {
             cluster: cluster_name,
             service: service_name,
@@ -90,15 +107,18 @@ function create_task() {
                 minimumHealthyPercent: Number(minimum_healthy)
             }
         };
-        let update_service = yield ecs.updateService(service_params).promise();
-        console.log(update_service.$response);
+        let updateServiceCommand = new client_ecs_1.UpdateServiceCommand(service_params);
+        let update_service = yield ecs.send(updateServiceCommand);
+        console.log(update_service.$metadata);
         let wait_params = {
-            cluster: cluster_name,
-            services: [service],
-            delay: Number(delay),
-            maxAttempts: Number(max_tries)
+            client: ecs,
+            maxWaitTime: Number(max_wait_time),
         };
-        ecs.waitFor('servicesStable', wait_params);
+        let ecs_service_params = {
+            cluster: cluster_name,
+            services: [service]
+        };
+        yield (0, client_ecs_1.waitUntilServicesInactive)(wait_params, ecs_service_params);
     });
 }
 create_task().catch(err => console.error(err));
