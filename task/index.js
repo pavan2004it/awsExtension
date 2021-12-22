@@ -28,8 +28,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// noinspection JSMismatchedCollectionQueryUpdate
+// Imports
 const tl = __importStar(require("azure-pipelines-task-lib"));
 const aws_sdk_1 = __importStar(require("aws-sdk"));
+// Code
 function create_task() {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
@@ -55,6 +58,9 @@ function create_task() {
         const max_tries = tl.getInput('max_tries', true);
         const s3_arn = tl.getInput('s3_arn', true);
         const Secrets = tl.getInput('Secrets', false);
+        const log_group = tl.getInput('log_group', false);
+        const log_region = tl.getInput('log_region', false);
+        const stream_prefix = tl.getInput('stream_prefix', false);
         let mySecArr = Secrets.split("\n");
         let sec_arr = [];
         mySecArr.forEach(item => {
@@ -75,7 +81,15 @@ function create_task() {
                     essential: true,
                     environmentFiles: [{ type: "s3", value: s3_arn }],
                     pseudoTerminal: pseudo,
-                    secrets: sec_arr
+                    secrets: sec_arr,
+                    logConfiguration: {
+                        logDriver: 'awslogs',
+                        options: {
+                            'awslogs-group': log_group,
+                            'awslogs-region': log_region,
+                            'awslogs-stream-prefix': stream_prefix
+                        }
+                    }
                 }
             ],
         };
