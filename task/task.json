@@ -1,7 +1,7 @@
 {
   "id": "3e037d93-30b3-4666-ac2f-e493d4bfa9c7",
   "name": "Ecs",
-  "friendlyName": "Ecs Task",
+  "friendlyName": "Ecs Task v3",
   "description": "aws service connection",
   "helpMarkDown": "",
   "category": "Build",
@@ -11,7 +11,7 @@
   ],
   "author": "pavan tikkani",
   "version": {
-    "Major": 11,
+    "Major": 1,
     "Minor": 0,
     "Patch": 0
   },
@@ -154,7 +154,13 @@
       "label": "Stream_Prefix",
       "defaultValue": "",
       "required": false,
-      "helpMarkDown": "Log stream prefix for the log groups"}
+      "helpMarkDown": "Log stream prefix for the log groups"},
+    {"name": "execution_role",
+      "type": "string",
+      "label": "Execution_Role",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Execution role arn"}
   ],
   "execution": {
     "Node": {
