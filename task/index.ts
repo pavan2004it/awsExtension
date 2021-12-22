@@ -37,7 +37,7 @@ async function create_task() {
     const log_group: string | undefined = tl.getInput('log_group',false)
     const log_region: string | undefined = tl.getInput('log_region',false)
     const stream_prefix: string | undefined = tl.getInput('stream_prefix',false)
-
+    const execution_role: string | undefined = tl.getInput('execution_role',false)
 
     let mySecArr: string[] = Secrets!.split("\n")
     let sec_arr: Secret[] = []
@@ -72,6 +72,7 @@ async function create_task() {
 
         }
         ],
+        executionRoleArn: execution_role!
     }
 
 

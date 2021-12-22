@@ -13,7 +13,7 @@
   "version": {
     "Major": 12,
     "Minor": 0,
-    "Patch": 0
+    "Patch": 2
   },
   "instanceNameFormat": "Aws Connection",
   "inputs": [
@@ -154,7 +154,13 @@
       "label": "Stream_Prefix",
       "defaultValue": "",
       "required": false,
-      "helpMarkDown": "Log stream prefix for the log groups"}
+      "helpMarkDown": "Log stream prefix for the log groups"},
+    {"name": "execution_role",
+      "type": "string",
+      "label": "Execution_Role",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Execution role arn"}
   ],
   "execution": {
     "Node": {

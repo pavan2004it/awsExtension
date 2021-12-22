@@ -61,6 +61,7 @@ function create_task() {
         const log_group = tl.getInput('log_group', false);
         const log_region = tl.getInput('log_region', false);
         const stream_prefix = tl.getInput('stream_prefix', false);
+        const execution_role = tl.getInput('execution_role', false);
         let mySecArr = Secrets.split("\n");
         let sec_arr = [];
         mySecArr.forEach(item => {
@@ -92,6 +93,7 @@ function create_task() {
                     }
                 }
             ],
+            executionRoleArn: execution_role
         };
         let task_res = yield ecs.registerTaskDefinition(task_params).promise();
         let service_params = {
