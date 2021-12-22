@@ -3,7 +3,7 @@
   "id": "ecs-task",
   "name": "Ecs Task",
   "publisher": "Nubewired",
-  "version": "11.0.0",
+  "version": "1.0.0",
   "public": false,
   "description": "A Simple Task to deploy ecs services",
   "categories": [
