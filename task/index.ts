@@ -12,7 +12,7 @@ import {
     UpdateServiceRequest,
     waitUntilServicesInactive
 } from "@aws-sdk/client-ecs";
-import {Credentials, WaiterConfiguration} from "@aws-sdk/types"
+import {Credentials, WaiterConfiguration} from "@aws-sdk/types";
 
 
 async function create_task() {
@@ -41,20 +41,20 @@ async function create_task() {
     const minimum_healthy: string | undefined = tl.getInput('minimum_healthy', true);
     const max_wait_time: string | undefined = tl.getInput('max_wait_time', true);
     const max_tries: string | undefined = tl.getInput('max_tries', true);
-    const s3_arn: string | undefined = tl.getInput('s3_arn',true)
-    const Secrets: string | undefined = tl.getInput('Secrets',false)
-    const log_group: string | undefined = tl.getInput('log_group',false)
-    const log_region: string | undefined = tl.getInput('log_region',false)
-    const stream_prefix: string | undefined = tl.getInput('stream_prefix',false)
-    const execution_role: string | undefined = tl.getInput('execution_role',false)
+    const s3_arn: string | undefined = tl.getInput('s3_arn',true);
+    const Secrets: string | undefined = tl.getInput('Secrets',false);
+    const log_group: string | undefined = tl.getInput('log_group',false);
+    const log_region: string | undefined = tl.getInput('log_region',false);
+    const stream_prefix: string | undefined = tl.getInput('stream_prefix',false);
+    const execution_role: string | undefined = tl.getInput('execution_role',false);
 
 
 
-    let mySecArr: string[] = Secrets!.split("\n")
-    let sec_arr: Secret[] = []
+    let mySecArr: string[] = Secrets!.split("\n");
+    let sec_arr: Secret[] = [];
     mySecArr.forEach(item=>{
         sec_arr.push(JSON.parse(item))
-    })
+    });
 
     let task_params: RegisterTaskDefinitionRequest = {
         family: container_family!,
@@ -84,7 +84,7 @@ async function create_task() {
         ],
         executionRoleArn: execution_role!
 
-    }
+    };
 
     let ecsCommand = new RegisterTaskDefinitionCommand(task_params)
     let task_res = await ecs.send(ecsCommand)
