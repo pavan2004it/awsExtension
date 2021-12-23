@@ -125,5 +125,5 @@ async function create_task() {
 
 }
 
-create_task().catch(err => console.error(err))
+create_task().then().catch(err => console.error(err))
 
