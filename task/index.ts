@@ -2,17 +2,15 @@
 
 import * as tl from "azure-pipelines-task-lib";
 import {
-    DescribeServicesRequest,
     ECSClient,
     LogDriver,
     RegisterTaskDefinitionCommand,
     RegisterTaskDefinitionRequest,
     Secret,
     UpdateServiceCommand,
-    UpdateServiceRequest,
-    waitUntilServicesInactive
+    UpdateServiceRequest
 } from "@aws-sdk/client-ecs";
-import {Credentials, WaiterConfiguration} from "@aws-sdk/types";
+import {Credentials} from "@aws-sdk/types";
 
 
 async function create_task() {
@@ -39,8 +37,6 @@ async function create_task() {
     const desired_count: string | undefined = tl.getInput('desired_count', true);
     const maximum_percent: string | undefined = tl.getInput('maximum_percent', true);
     const minimum_healthy: string | undefined = tl.getInput('minimum_healthy', true);
-    const max_wait_time: string | undefined = tl.getInput('max_wait_time', true);
-    // const max_tries: string | undefined = tl.getInput('max_tries', true);
     const s3_arn: string | undefined = tl.getInput('s3_arn',true);
     const Secrets: string | undefined = tl.getInput('Secrets',false);
     const log_group: string | undefined = tl.getInput('log_group',false);
@@ -105,25 +101,10 @@ async function create_task() {
 
     let update_service = await ecs.send(updateServiceCommand)
 
-    console.log(update_service.$metadata)
+    console.log(update_service)
 
-
-
-    let wait_params: WaiterConfiguration<ECSClient> = {
-        client: ecs!,
-        maxWaitTime: Number(max_wait_time),
-
-    }
-
-    let ecs_service_params: DescribeServicesRequest = {
-        cluster: cluster_name!,
-        services: [service_name!]
-    }
-
-    await waitUntilServicesInactive(wait_params,ecs_service_params)
 
 
 }
 
 create_task().then().catch(err => console.error(err))
-

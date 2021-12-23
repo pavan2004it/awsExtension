@@ -54,8 +54,6 @@ function create_task() {
         const desired_count = tl.getInput('desired_count', true);
         const maximum_percent = tl.getInput('maximum_percent', true);
         const minimum_healthy = tl.getInput('minimum_healthy', true);
-        const max_wait_time = tl.getInput('max_wait_time', true);
-        // const max_tries: string | undefined = tl.getInput('max_tries', true);
         const s3_arn = tl.getInput('s3_arn', true);
         const Secrets = tl.getInput('Secrets', false);
         const log_group = tl.getInput('log_group', false);
@@ -109,16 +107,7 @@ function create_task() {
         };
         let updateServiceCommand = new client_ecs_1.UpdateServiceCommand(service_params);
         let update_service = yield ecs.send(updateServiceCommand);
-        console.log(update_service.$metadata);
-        let wait_params = {
-            client: ecs,
-            maxWaitTime: Number(max_wait_time),
-        };
-        let ecs_service_params = {
-            cluster: cluster_name,
-            services: [service]
-        };
-        yield (0, client_ecs_1.waitUntilServicesInactive)(wait_params, ecs_service_params);
+        console.log(update_service);
     });
 }
 create_task().then().catch(err => console.error(err));
