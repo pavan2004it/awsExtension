@@ -1,9 +1,9 @@
 {
   "manifestVersion": 1,
   "id": "ecs-task",
-  "name": "Ecs-Task-v3",
+  "name": "Ecs-Task-v1.0.5",
   "publisher": "Nubewired",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "public": false,
   "description": "A Simple Task to deploy ecs services",
   "categories": [
