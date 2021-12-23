@@ -1,7 +1,7 @@
 {
-  "id": "3e037d93-30b3-4666-ac2f-e493d4bfa9c7",
-  "name": "Ecs",
-  "friendlyName": "Ecs Task",
+  "id": "9aadbefa-4be4-4e79-b29f-bc981e0db7a1",
+  "name": "AWS ECS Service Update",
+  "friendlyName": "AWS ECS Service Update",
   "description": "aws service connection",
   "helpMarkDown": "",
   "category": "Build",
@@ -11,25 +11,17 @@
   ],
   "author": "pavan tikkani",
   "version": {
-    "Major": 12,
+    "Major": 13,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 0
   },
-  "instanceNameFormat": "Aws Connection",
+  "instanceNameFormat": "Aws ECS Update Service",
   "inputs": [
     {
       "name": "service",
       "type": "connectedService:AWS",
       "label": "Aws Connection",
       "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "Select the aws endpoint and pull credentials from the endpoint"
-    },
-    {
-      "name": "pat token",
-      "type": "string",
-      "label": "pat token",
-      "defaultValue": "$(pat_token)",
       "required": true,
       "helpMarkDown": "Select the aws endpoint and pull credentials from the endpoint"
     },
