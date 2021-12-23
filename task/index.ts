@@ -40,7 +40,7 @@ async function create_task() {
     const maximum_percent: string | undefined = tl.getInput('maximum_percent', true);
     const minimum_healthy: string | undefined = tl.getInput('minimum_healthy', true);
     const max_wait_time: string | undefined = tl.getInput('max_wait_time', true);
-    const max_tries: string | undefined = tl.getInput('max_tries', true);
+    // const max_tries: string | undefined = tl.getInput('max_tries', true);
     const s3_arn: string | undefined = tl.getInput('s3_arn',true);
     const Secrets: string | undefined = tl.getInput('Secrets',false);
     const log_group: string | undefined = tl.getInput('log_group',false);
@@ -117,7 +117,7 @@ async function create_task() {
 
     let ecs_service_params: DescribeServicesRequest = {
         cluster: cluster_name!,
-        services: [service!]
+        services: [service_name!]
     }
 
     await waitUntilServicesInactive(wait_params,ecs_service_params)

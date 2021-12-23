@@ -1,7 +1,7 @@
 {
   "id": "3e037d93-30b3-4666-ac2f-e493d4bfa9c7",
   "name": "Ecs",
-  "friendlyName": "Ecs Task v3",
+  "friendlyName": "Ecs-Task-v3",
   "description": "aws service connection",
   "helpMarkDown": "",
   "category": "Build",
@@ -13,7 +13,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 3
   },
   "instanceNameFormat": "Aws Ecs Update Service",
   "inputs": [

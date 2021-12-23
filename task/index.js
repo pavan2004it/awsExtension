@@ -55,7 +55,7 @@ function create_task() {
         const maximum_percent = tl.getInput('maximum_percent', true);
         const minimum_healthy = tl.getInput('minimum_healthy', true);
         const max_wait_time = tl.getInput('max_wait_time', true);
-        const max_tries = tl.getInput('max_tries', true);
+        // const max_tries: string | undefined = tl.getInput('max_tries', true);
         const s3_arn = tl.getInput('s3_arn', true);
         const Secrets = tl.getInput('Secrets', false);
         const log_group = tl.getInput('log_group', false);
