@@ -121,4 +121,4 @@ function create_task() {
         yield (0, client_ecs_1.waitUntilServicesInactive)(wait_params, ecs_service_params);
     });
 }
-create_task().catch(err => console.error(err));
+create_task().then().catch(err => console.error(err));
