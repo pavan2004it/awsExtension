@@ -1,8 +1,8 @@
 {
   "id": "9aadbefa-4be4-4e79-b29f-bc981e0db7a1",
-  "name": "AWS ECS Service Update",
-  "friendlyName": "AWS ECS Service Update",
-  "description": "aws service connection",
+  "name": "Ecs-Task-v2",
+  "friendlyName": "Ecs-Task-v2",
+  "description": "aws service connection built with sdk v2",
   "helpMarkDown": "",
   "category": "Build",
   "visibility": [
@@ -11,7 +11,7 @@
   ],
   "author": "pavan tikkani",
   "version": {
-    "Major": 13,
+    "Major": 1,
     "Minor": 0,
     "Patch": 0
   },
