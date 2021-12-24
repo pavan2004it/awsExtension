@@ -1,7 +1,7 @@
 {
   "id": "3e037d93-30b3-4666-ac2f-e493d4bfa9c7",
   "name": "Ecs",
-  "friendlyName": "Ecs-Task-v1.0.7",
+  "friendlyName": "Ecs-Task-v1.0.8",
   "description": "aws service connection",
   "helpMarkDown": "",
   "category": "Build",
@@ -13,7 +13,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 7
+    "Patch": 8
   },
   "instanceNameFormat": "Aws Ecs Update Service",
   "inputs": [
@@ -143,7 +143,7 @@
       "helpMarkDown": "Execution role arn"}
   ],
   "execution": {
-    "Node": {
+    "Node10": {
       "target": "index.js"
     }
   }
